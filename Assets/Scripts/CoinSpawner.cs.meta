@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+guid: 99d3700622114554b94441af602c31d4
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - <CoinPrefab>k__BackingField: {fileID: 5780326580087822974, guid: 98dbf1fdfe3dcb94a93afc922e3c82cc, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
