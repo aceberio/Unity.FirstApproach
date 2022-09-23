@@ -1,4 +1,5 @@
-# Unity.FirstApproach
+# Unity.FirstApproach 
+- Test https://aceberio.github.io/Unity.FirstApproach/
 - 2D.
 - Scenes.
 - Sprites.
@@ -22,3 +23,4 @@
 - Scene handler.
 - Coroutines.
 - Sorting layers.
+- Publish WebGL and host in GitHub Pages.
