@@ -10,14 +10,7 @@ public sealed class CoinSpawner : MonoBehaviour
     {
     }
 
-    public static CoinSpawner Instance
-    {
-        get
-        {
-            _instance = SingletonResolver.Resolve(_instance);
-            return _instance;
-        }
-    }
+    public static CoinSpawner Instance => _instance;
 
     [field: SerializeField] public GameObject Seed { get; set; }
     [field: SerializeField] public int CoinCountLimit { get; set; } = 10;
@@ -26,6 +19,17 @@ public sealed class CoinSpawner : MonoBehaviour
     {
         Destroy(coin);
         _coinCount--;
+    }
+
+    private void Awake()
+    {
+        if (_instance != null && _instance != this)
+        {
+            Destroy(this);
+            return;
+        }
+
+        _instance = this;
     }
 
     private void Update()

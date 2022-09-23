@@ -1,3 +1,4 @@
+using Factories;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,14 +10,8 @@ public sealed class ScoreHandler : MonoBehaviour
     {
     }
 
-    public static ScoreHandler Instance
-    {
-        get
-        {
-            _instance = SingletonResolver.Resolve(_instance);
-            return _instance;
-        }
-    }
+    public static ScoreHandler Instance =>
+        _instance ??= MonoBehaviourFactory.Create<ScoreHandler>(ObjectScopeType.Game);
 
     private int _score { get; set; }
     private Text _scoreText { get; set; }
@@ -27,6 +22,12 @@ public sealed class ScoreHandler : MonoBehaviour
         UpdateScoreInUI();
         if (_score != 5 || SceneHandler.Instance.GetActiveScene().name == "Scene02") return;
         SceneHandler.Instance.LoadScene("Scene02", UpdateScoreInUI);
+    }
+
+    private void Awake()
+    {
+        if (_instance == null || _instance == this) return;
+        Destroy(this);
     }
 
     private void UpdateScoreInUI()

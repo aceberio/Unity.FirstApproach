@@ -1,3 +1,4 @@
+using Factories;
 using System;
 using System.Collections;
 using UnityEngine;
@@ -11,19 +12,19 @@ public sealed class SceneHandler : MonoBehaviour
     {
     }
 
-    public static SceneHandler Instance
-    {
-        get
-        {
-            _instance = SingletonResolver.Resolve(_instance);
-            return _instance;
-        }
-    }
+    public static SceneHandler Instance =>
+        _instance ??= MonoBehaviourFactory.Create<SceneHandler>(ObjectScopeType.Game);
 
     public void LoadScene(string sceneName, Action afterLoadAction) =>
         StartCoroutine(LoadSceneRoutine(sceneName, afterLoadAction));
 
     public Scene GetActiveScene() => SceneManager.GetActiveScene();
+
+    private void Awake()
+    {
+        if (_instance == null || _instance == this) return;
+        Destroy(this);
+    }
 
     private IEnumerator LoadSceneRoutine(string sceneName, Action afterLoadAction)
     {
