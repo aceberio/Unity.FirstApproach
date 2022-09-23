@@ -18,5 +18,7 @@ Manual player limit.
 Colliders player limit.
 Dynamic instantiation.
 Scripter component.
-Singleton component.
-Scene change.
+Singleton resolver.
+Scene handler.
+Coroutines.
+Sorting layers.

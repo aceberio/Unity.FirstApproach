@@ -1,11 +1,23 @@
 using UnityEngine;
 
-public sealed class CoinManager : MonoBehaviour
+public sealed class CoinSpawner : MonoBehaviour
 {
-    private static int _coinCount;
+    private static CoinSpawner _instance;
+    private int _coinCount;
     private float _timer;
 
-    public static CoinManager Instance { get; private set; }
+    private CoinSpawner()
+    {
+    }
+
+    public static CoinSpawner Instance
+    {
+        get
+        {
+            _instance = SingletonResolver.Resolve(_instance);
+            return _instance;
+        }
+    }
 
     [field: SerializeField] public GameObject Seed { get; set; }
     [field: SerializeField] public int CoinCountLimit { get; set; } = 10;
@@ -14,13 +26,6 @@ public sealed class CoinManager : MonoBehaviour
     {
         Destroy(coin);
         _coinCount--;
-    }
-
-    private void Awake()
-    {
-        if (Instance != null) Destroy(gameObject);
-        Instance = this;
-        DontDestroyOnLoad(this);
     }
 
     private void Update()
