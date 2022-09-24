@@ -20,7 +20,7 @@
 - Colliders player limit.
 - Dynamic instantiation.
 - Scripter component.
-- Singleton resolver.
+- Mono behaviour factory.
 - Scene handler.
 - Coroutines.
 - Sorting layers.
