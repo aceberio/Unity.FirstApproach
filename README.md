@@ -5,6 +5,7 @@
 - Sprites.
 - Colliders.
 - Rigid bodies.
+- Physic materials.
 - Animations.
 - Prefabs.
 - Scripts.
