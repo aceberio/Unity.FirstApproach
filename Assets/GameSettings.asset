@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ebb4adfa99b13c4eacef5a26732b0f6, type: 3}
+  m_Name: GameSettings
+  m_EditorClassIdentifier: 
+  <CoinSettings>k__BackingField:
+    <CoinPrefab>k__BackingField: {fileID: 4023866140039957027, guid: 943f79e3650c5ca4ea66c9ee15ec1d5d, type: 3}
+    <CoinCountLimit>k__BackingField: 10
+  <CharacterSettings>k__BackingField:
+    <CharacterPrefab>k__BackingField: {fileID: 3638816997342811742, guid: 56a1568d098e6cf4c9f497b3e8626755, type: 3}
+    <JumpKey>k__BackingField: space
+    <LeftKey>k__BackingField: left
+    <RightKey>k__BackingField: right
+    <UsePhysics>k__BackingField: 1
+    <Speed>k__BackingField: 125
+    <MovementForce>k__BackingField: 1250
+    <JumpForce>k__BackingField: 1000
+    <JumpHeight>k__BackingField: 500
+    <JumpThreshold>k__BackingField: 100
+    <LeftLimit>k__BackingField: -854
+    <RightLimit>k__BackingField: 854
